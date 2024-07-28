@@ -1,0 +1,110 @@
+
+import 'package:books_projects/screens/login_screen.dart';
+import 'package:flutter/material.dart';
+
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Sign Up"),
+      ),
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.network(
+              'https://tse1.mm.bing.net/th?id=OIP.xbJ0e-I28Vxr7q2RigBi7wHaLH&pid=Api',
+              fit: BoxFit.fill,
+            ),
+          ),
+          Positioned.fill(
+            child: Container(
+              color: Colors.black.withOpacity(0.5),
+            ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                decoration: InputDecoration(
+                  labelText: "E-mail",
+                  prefixIcon: const Icon(Icons.email),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                ),
+              ),
+              const SizedBox(
+                height:25.0,
+                width: 15.0,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: "Phone",
+                  prefixIcon: const Icon(Icons.phone),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                ),
+              ),
+              const SizedBox(
+                height:25.0,
+                width: 15.0,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: "Password",
+                  prefixIcon: const Icon(Icons.lock),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                ),
+              ),
+              const SizedBox(
+                height:25.0,
+                width: 15.0,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: "Confirm Password",
+                  prefixIcon: const Icon(Icons.lock),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                ),
+              ),
+              const SizedBox(
+                height:25.0,
+                width: 15.0,
+              ),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen()));
+                },
+                icon: const Icon(Icons.check),
+                label: const Text("Let's Go"),
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.blue,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
